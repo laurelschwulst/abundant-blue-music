@@ -1,0 +1,122 @@
+/* pollen */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  background: #32006a;
+  color: white;
+}
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.iframe-container-background {
+  position: absolute;
+  top: 32px;
+  left: 0
+  z-index: 0;
+  width: 100%;
+  height: calc(100% - 32px);
+  background: black;
+  border-radius: 50%;
+  border: 16px solid #32006a;
+  filter: blur(16px)
+}
+iframe {
+  position: absolute;
+  width: calc(100% - 64px);
+  height: calc(100% - 96px);
+  top: 64px;
+  left: 32px;
+  bottom: 32px;
+  border: none;
+  border-radius: 50%;
+}
+.iframe-description {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  height: 48px;
+  overflow-y: hidden;
+  border: 1px solid magenta;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(50, 0, 106, 1);
+/*         background: linear-gradient(to bottom, rgba(50,0,106,1) 90%, rgba(50,0,106,0) 100%) */
+}
+.gradient-mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(50,0,106,0), rgba(50,0,106,1))
+}
+.iframe-description:hover {
+  height: auto;
+}
+.iframe-description ul {
+  margin-top: 13px;
+  padding-left: 28px;
+}
+.iframe-description .out-link {
+  margin-right: 16px;
+  margin-top: 13px;
+}
+a {
+  color: white;
+}
+a:hover {
+  color: magenta;
+}
+.flower-minimap {
+  position: absolute;
+  left: 16px;
+  bottom: 38px;
+  z-index: 10;
+}
+.flower-minimap .petal {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  transform-origin: 50% 125%
+}
+.petal:hover {
+  background: #32006a !important;
+}
+.petal:nth-child(2) {
+  transform: rotate(72deg)
+}
+.petal:nth-child(3) {
+  transform: rotate(144deg)
+}
+.petal:nth-child(4) {
+  transform: rotate(216deg)
+}
+.petal:nth-child(5) {
+  transform: rotate(288deg)
+}
+.petal.highlight {
+  background: magenta;
+}
+.center {
+  position: absolute;
+  top: 10px;
+  left: 1px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #32006a;
+}
